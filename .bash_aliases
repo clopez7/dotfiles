@@ -1,11 +1,21 @@
+alias mp3list='youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s"'
+alias mp3='youtube-dl --extract-audio --audio-format mp3'
+
+alias tmuxnew='tmux new -d'
+alias win10='bash ~/.config/scripts/win10.sh'
+
+#turn off the screen
+alias off='xset dpms force off'
+
 #i3 conf
-alias i3conf='vim ~/.config/i3/config'
+alias i3codium='codium ~/.config/i3/config'
+alias i3vim='vim ~/.config/i3/config'
 alias statusconf='vim ~/.config/i3/config'
 
 #fix scroll lock for virt-manager
 alias scroll="xmodmap -e 'add mod3 = Scroll_Lock'"
 
-#fish shell
+#fish
 alias fconf='vim ~/.config/fish/config.fish'
 alias d='fish_default_key_bindings'
 
@@ -30,6 +40,7 @@ alias .....='cd ../../../..'
 
 #MATE
 alias logout='mate-session-save --force-logout'
+alias lg='mate-session-save --force-logout'
 
 #GNOME
 #alias logout='gnome-session-quit'
@@ -44,11 +55,13 @@ alias shortcuts='gnome-control-center keyboard'
 alias ss='sudo systemctl'
 alias sus='systemctl suspend'
 
+#update packages
+alias up='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
+
 #apt
 alias i='sudo apt install'
 alias inst="apt list --installed"
 alias apt='sudo apt'
-alias up='sudo apt update && sudo apt upgrade -y'
 alias ar='sudo apt autoremove -y'
 
 # Browsers
@@ -57,8 +70,12 @@ alias brave='brave-browser'
 alias f='firefox'
 
 #XRandr / Screen res
-alias csgo='xrandr --output DVI-D-0 --mode 1152x864 --rate 75.02 && steam steam://rungameid/730'
-alias 75hz='xrandr --output DVI-D-0 --mode 1152x864 --rate 75.02'
+alias cs='xrandr --output DVI-D-0 --mode 1152x864 --rate 75.02 && steam steam://rungameid/730'
+#alias highrefresh='xrandr --output DVI-D-0 --mode 1152x864 --rate 75.02'
+alias csgo='tmux new -s "csgo" -d "bash -i -c cs"'
+alias steam='tmux new -s "steam" -d "steam"'
+alias mysteam='tmux new -s "steam"'
+alias res='xrandr --output DVI-D-0 --mode 1152x864 --rate 75.02'
 alias cshd='steam steam://rungameid/730'
 alias normal='xrandr --output DVI-D-0 --mode 1920x1080 --rotate normal'
 alias left='xrandr --output DVI-D-0 --mode 1920x1080 --rotate left'
@@ -76,7 +93,7 @@ alias spoti='LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify'
 alias nx='npx nodemon'
 alias apache='sudo systemctl restart apache2'
 alias code='codium'
-alias nf='neofetch'
+alias nf='clear; neofetch'
 alias serve='ionic serve --external'
 alias s='ionic serve --external'
 alias react='npx create-react-app'
