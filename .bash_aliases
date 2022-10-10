@@ -1,12 +1,12 @@
+#youtube-dl
 alias mp3list='youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s"'
 alias mp3='youtube-dl --extract-audio --audio-format mp3'
 
+
 alias tmuxnew='tmux new -d'
 alias win10='bash ~/.config/scripts/win10.sh'
-
 #turn off the screen
 alias off='xset dpms force off'
-
 #i3 conf
 alias i3codium='codium ~/.config/i3/config'
 alias i3vim='vim ~/.config/i3/config'
@@ -56,7 +56,7 @@ alias ss='sudo systemctl'
 alias sus='systemctl suspend'
 
 #update packages
-alias up='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
+alias up='sudo apt update && sudo apt upgrade && sudo snap refresh'
 
 #apt
 alias i='sudo apt install'
