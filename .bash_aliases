@@ -10,7 +10,7 @@ alias off='xset dpms force off'
 #i3 conf
 alias i3codium='codium ~/.config/i3/config'
 alias i3vim='vim ~/.config/i3/config'
-alias statusconf='vim ~/.config/i3/config'
+alias i3conf='vim ~/.config/i3/config'
 
 #fix scroll lock for virt-manager
 alias scroll="xmodmap -e 'add mod3 = Scroll_Lock'"

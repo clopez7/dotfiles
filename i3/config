@@ -1,33 +1,33 @@
 #i3wm config
-#transparency
+
+#Compton
 exec --no-startup-id compton
 
-#assign workspaces then focus on them
-#Chromium
+#Assign workspace and focus
+
 assign [class="(?i)chromium"] 1
 for_window [class="(?i)chromium"] focus
-#brave
-assign [class="(?i)Brave-browser"] 2
+
 assign [class="(?i)brave-browser"] 2
 for_window [class="(?i)brave-browser"] focus
-#GNOME terminal
+
 assign [class="(?i)Terminal"] 3
 for_window [class="(?i)Terminal"] focus
-#keepassxc 
+
 assign [class="(?i)keepassxc"] 4
 for_window [class="(?i)keepassxc"] focus
-#steam
+
 assign [class="(?i)steam"] 5
 for_window [class="(?i)steam"] focus
-#virt-manager
+
 assign [class="(?i)virt-manager"] 6
 for_window [class="(?i)virt-manager"] focus
-#csgo
-assign [class="(?i)csgo_linux64"] 7
-for_window [class="(?i)csgo_linux64"] focus
-#caja
-#assign [class="(?i)caja"] 3
-#for_window [class="(?i)caja"] focus
+
+for_window [class="^Spotify"] move to workspace 7
+for_window [class="^Spotify"] focus
+
+assign [class="(?i)caja"] 8
+for_window [class="(?i)caja"] focus
 
 #Launch at boot
 exec --no-startup-id i3-msg "workspace 2; exec ~/.config/scripts/boot_terminal"
@@ -168,12 +168,13 @@ mode "resize" {
 bar {
         status_command i3status
         tray_output primary
-	#mode hide
-        mode dock
+	mode invisible
+	#mode hide mostrar solo con modkey
+        #mode dock mostrar siempre
         modifier $mod
 	colors {
-                background #1E1E2E
-        }
+	   background #1E1E2E
+	}
 }
 
 # CUSTOM KEYS
@@ -182,7 +183,8 @@ exec --no-startup-id nm-applet
 #Turn off screen then lock MATE desktop
 # bindsym $mod+Control+l exec ~/.config/scripts/lock
 bindsym $mod+Control+l exec "bash -i -c off"
-bindsym $mod+b exec "brave-browser --password-store=basic"
+#bindsym $mod+b exec "brave-browser --password-store=basic"
+bindsym $mod+b exec "snap run brave"
 bindsym $mod+n exec "bash -i -c normal"
 # Pulse Audio controls
 bindsym $mod+F2 exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
